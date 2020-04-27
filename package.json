@@ -1,0 +1,23 @@
+{
+  "name": "Wong-Blogs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gilwong00/wong-blogs.git",
+  "author": "Gilbert <gilwong3105@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.2.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.0.3",
+    "pg-pool": "^3.1.1"
+  }
+}
