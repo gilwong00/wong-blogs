@@ -1,0 +1,39 @@
+version: "3"
+# in a yaml file, cant use tabs use 2 spaces
+services:
+  wongblogapi:
+    container_name: api
+    # this builds from our Dockerfile 
+    build: ./ 
+    command: yarn dev
+    working_dir: /usr/src/wong-blog
+    ports:
+      - "5000:5000"
+    networks:
+      - default
+    #  mapping our local files to our container so our container is aware of changes
+    volumes: 
+      - ./:/usr/src/wong-blog
+    # environment variables
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 'test'
+      POSTGRES_DB: blog
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+    # links is for other services we might have like redis or postgres
+    links:
+      - postgres
+
+
+  # Postgres
+  postgres:
+    container_name: postgres
+    # build from whats in our postgres folder
+    build: ./postgres
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 'test'
+      POSTGRES_DB: blog
+    ports:
+      - "5432:5432"

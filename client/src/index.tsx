@@ -12,7 +12,7 @@ const rootNode = document.getElementById('root');
 Promise.resolve()
   .then(async () => {
 		await store.dispatch(fetchUser());
-		await store.dispatch(fetchPosts());
+		// await store.dispatch(fetchPosts());
 		
     ReactDOM.render(
       <React.StrictMode>
