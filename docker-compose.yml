@@ -1,5 +1,5 @@
 version: "3"
-# in a yaml file, cant use tabs use 2 spaces
+
 services:
   wongblogapi:
     container_name: api
