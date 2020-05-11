@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import { makeStyles } from '@material-ui/core/styles';
 
 import Card from '@material-ui/core/Card';
@@ -40,8 +40,8 @@ const Post = () => {
   const [showInput, setShowInput] = useState<boolean>(false);
   const { id } = useParams();
   const posts = useSelector((state: IStoreState) => state.posts.posts);
-	const post = posts.find(((p: IPost)) => p && p.id?.toString() === id);
-	const dispatch = useDispatch();
+	const post = posts.find((p: IPost) => p && p.id?.toString() === id);
+	// const dispatch = useDispatch();
 
   return (
     <PostWrapper>
