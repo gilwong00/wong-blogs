@@ -19,8 +19,14 @@ jobs:
           steps:
             - run: echo "starting test"
             - run: cd ./client && yarn
-            - run: cd ./client && yarn test
-        
+            - run: cd ./client && yarn test -- --coverage
+  deploy:
+    docker:
+      - image: circleci/node:13
+    steps:
+      - checkout
+      # add steps to deploy to aws
+          
 workflows:
     build-and-test:
       jobs:
@@ -28,3 +34,8 @@ workflows:
         - test:
             requires:
               - build
+        - deploy:
+            filters:
+              branches:
+                only:
+                - master
