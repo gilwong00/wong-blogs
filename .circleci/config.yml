@@ -15,9 +15,11 @@ jobs:
       - image: circleci/node:13
     steps:
       - checkout
-      - run: echo "starting test"
-      - run: cd ./ && yarn
-      - run: cd ./ && yarn test
+      - node/with-cache:
+          steps:
+            - run: echo "starting test"
+            - run: cd ./client && yarn
+            - run: cd ./client && yarn test
         
 workflows:
     build-and-test:
