@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const Login = () => {
   const [username, setUserName] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState();
+  // const [error, setError] = useState();
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -49,8 +49,9 @@ const Login = () => {
       await dispatch(login({ username, password }));
       return history.push('/');
     } catch (err) {
-      // set some error state
-      setError(err);
+			// set some error state
+			console.log(err);
+      // setError(err);
     }
   };
   return (

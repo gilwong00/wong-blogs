@@ -6,7 +6,7 @@ import store from './store/store';
 import { fetchUser } from './store/actions/user';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { fetchPosts } from './store/actions/post';
+// import { fetchPosts } from './store/actions/post';
 const rootNode = document.getElementById('root');
 
 Promise.resolve()

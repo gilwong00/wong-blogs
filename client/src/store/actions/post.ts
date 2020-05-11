@@ -1,4 +1,4 @@
-import { DispatchResult, ActionResult, NonAsyncAction } from '.';
+import { DispatchResult, ActionResult } from '.';
 import axios from 'axios';
 import { IUser } from './user';
 
